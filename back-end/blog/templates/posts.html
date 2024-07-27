@@ -1,0 +1,22 @@
+<section id="posts" class="col">
+  {% for post in posts %}
+  <article id={{post.id}} class="card mb-3 border border-secondary" >
+    <div class="row g-0">
+      <div class="col-2 col-">
+        <img src={{post.image.thumbnail.url}} class="img-fluid rounded-start" alt="..." />
+      </div>
+      <div class="col-10">
+        <div class="card-body">
+          <h5 class="card-title">{{post.titlePost}}</h5>
+          <p class="card-text">
+            {{post.descriptionPost}}
+          </p>
+          <p class="card-text">
+            <a href={% url 'article' post.id %} class="btn btn-warning">About</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
